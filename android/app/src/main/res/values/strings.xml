@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">حاسبة الدحشة</string>
+    <string name="title_activity_main">حاسبة الدحشة</string>
+    <string name="package_name">com.dahshah.calculator</string>
+    <string name="custom_url_scheme">com.dahshah.calculator</string>
+</resources>

@@ -1,0 +1,8 @@
+{
+  "name": "حاسبتي",
+  "description": "تطبيق متكامل لحساب مبيعات كروت شبكة الدحشة، تتبع الأرباح، وإصدار التقارير اليومية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

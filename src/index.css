@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "IBM Plex Sans Arabic", "Inter", "Noto Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 0 0px rgba(239, 68, 68, 0);
+  }
+  50% {
+    border-color: rgba(239, 68, 68, 0.95);
+    box-shadow: 0 0 16px 3px rgba(239, 68, 68, 0.15);
+  }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s infinite ease-in-out;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    direction: rtl;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-900 transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+}
+
+@media print {
+  /* Hide the rest of the application so it doesn't print */
+  #main-app-content, .toast-container, [role="dialog"], .print-hide, select, button, input {
+    display: none !important;
+  }
+  
+  @page {
+    margin: 0 !important;
+    size: 80mm auto !important;
+  }
+  
+  html, body {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    direction: rtl !important;
+    font-size: 11px !important;
+  }
+  
+  #thermal-print-section {
+    display: block !important;
+    width: 80mm !important;
+    max-width: 80mm !important;
+    margin: 0 !important;
+    padding: 4mm !important;
+    box-sizing: border-box !important;
+  }
+  
+  #thermal-print-section * {
+    color: #000000 !important;
+    font-weight: 850 !important;
+    text-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
